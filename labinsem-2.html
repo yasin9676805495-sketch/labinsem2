@@ -1,0 +1,66 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Exam Result</title>
+    <style>
+        body {
+            font-family: Arial;
+            text-align: center;
+            background-color: lightblue;
+            padding: 50px;
+        }
+
+        .box {
+            background: white;
+            padding: 30px;
+            width: 300px;
+            margin: auto;
+            border-radius: 10px;
+        }
+
+        input, button {
+            padding: 10px;
+            margin: 10px;
+        }
+
+        #result {
+            font-size: 25px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="box">
+        <h2>Exam Result</h2>
+
+        <label>Enter Your Marks:</label><br>
+        <input type="number" id="marks" placeholder="Enter marks"><br>
+
+        <button onclick="checkResult()">Check Result</button>
+
+        <p id="result"></p>
+    </div>
+
+    <script>
+        function checkResult() {
+            let marks = document.getElementById("marks").value;
+            let result = document.getElementById("result");
+
+            if (marks === "") {
+                result.innerHTML = "Please enter marks";
+            }
+            else if (marks >= 35) {
+                result.innerHTML = "PASS";
+                result.style.color = "green";
+            }
+            else {
+                result.innerHTML = "FAIL";
+                result.style.color = "red";
+            }
+        }
+    </script>
+
+</body>
+</html>
